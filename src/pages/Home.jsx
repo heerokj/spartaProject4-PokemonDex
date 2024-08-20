@@ -5,7 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <img src="/assets/pngwing.com.png" alt="pokemon" />
+      <img src="https://fontmeme.com/images/Pokemon-Logo.jpg" alt="pokemon" />
       <button
         onClick={() => {
           navigate("/Dex");
