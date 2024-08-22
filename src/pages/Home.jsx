@@ -44,4 +44,11 @@ const HomeButton = styled.button`
   height: 50px;
   border-radius: 10px;
   border-color: gray;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  &:hover {
+    background-color: #c0bcbc;
+  }
 `;

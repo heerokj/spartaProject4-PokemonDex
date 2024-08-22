@@ -6,11 +6,15 @@ import styled from "styled-components";
 import MOCK_DATA from "../mock";
 
 const Dex = () => {
-  const [selectedPokemon, setSelectedPokemon] = useState([]);
+  const [selectedPokemon, setSelectedPokemon] = useState([]); //{}로?
 
   return (
     <Main>
-      <Dashboard />
+      <Dashboard
+        MOCK_DATA={MOCK_DATA}
+        selectedPokemon={selectedPokemon}
+        setSelectedPokemon={setSelectedPokemon}
+      />
       <PokemonList MOCK_DATA={MOCK_DATA} />
     </Main>
   );
