@@ -5,41 +5,34 @@ import styled from "styled-components";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <div>
-        <HomeImg
-          src="https://fontmeme.com/images/Pokemon-Logo.jpg"
-          alt="pokemon"
-        />
-      </div>
-      <HomeButtonDiv>
-        <HomeButton
-          onClick={() => {
-            navigate("/Dex");
-          }}
-        >
-          포켓몬 도감 시작하기
-        </HomeButton>
-      </HomeButtonDiv>
-    </div>
+    <HomeContainer>
+      <HomeImg
+        src="https://fontmeme.com/images/Pokemon-Logo.jpg"
+        alt="pokemon"
+      />
+      <HomeButton
+        onClick={() => {
+          navigate("/Dex");
+        }}
+      >
+        포켓몬 도감 시작하기
+      </HomeButton>
+    </HomeContainer>
   );
 };
 
 export default Home;
 
-const HomeImg = styled.img`
-  position: relative;
-  bottom: 100px;
-`;
+const HomeContainer = styled.div``;
 
-const HomeButtonDiv = styled.div`
-  display: flex;
-  justify-content: center;
+const HomeImg = styled.img`
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
 `;
 
 const HomeButton = styled.button`
-  position: relative;
-  bottom: 250px;
   width: 300px;
   height: 50px;
   border-radius: 10px;
@@ -51,4 +44,7 @@ const HomeButton = styled.button`
   &:hover {
     background-color: #c0bcbc;
   }
+
+  /* position: relative;
+  top: 100px; */
 `;

@@ -4,7 +4,9 @@
 */
 
 html,
-body,
+body {
+  /* height: 100%; */
+}
 div,
 span,
 applet,
@@ -128,8 +130,7 @@ table {
   border-spacing: 0;
 }
 #root {
-  height: 100%;
-  width: 100%;
+  /* 상하좌우 정중앙 정렬하기 */
   display: flex;
   justify-content: center;
   align-items: center;

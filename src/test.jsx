@@ -11,6 +11,7 @@ const PokemonList = ({ MOCK_DATA, addPokemon }) => {
     <ListContainer>
       {MOCK_DATA.map((poke) => {
         return (
+          // <Link key={poke.id} to={`/pokemon-detail?${poke.id}`}>
           <GridItem
             key={poke.id}
             onClick={() => {
@@ -24,10 +25,9 @@ const PokemonList = ({ MOCK_DATA, addPokemon }) => {
               <GridTextTitle>{poke.korean_name}</GridTextTitle>
               <GridTextNo>No. {poke.id}</GridTextNo>
             </GridTextDiv>
-            <GridButton id={poke.id} onClick={addPokemon}>
-              추가
-            </GridButton>
+            <GridButton onClick={addPokemon}>추가</GridButton>
           </GridItem>
+          // </Link>
         );
       })}
     </ListContainer>

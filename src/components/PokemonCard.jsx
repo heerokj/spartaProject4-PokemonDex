@@ -1,11 +1,20 @@
 import React from "react";
-import { flushSync } from "react-dom";
-import { MOCK_DATA } from "../mock";
 
-const PokemonCard = ({ MOCK_DATA }) => {
-  console.log("MOCK_DATA");
-  console.log("MOCK_DATA", MOCK_DATA[0]);
-  return <div>PokemonCard</div>;
+const PokemonCard = ({ selectedPokemon, setSelectedPokemon }) => {
+  console.log("selectedPokemon :====>", selectedPokemon);
+
+  selectedPokemon.map((poke) => {
+    return (
+      <GridItem key={poke.id}>
+        <GridImg src={poke.img_url} alt="" />
+        <GridTextDiv>
+          <GridTextTitle>{poke.korean_name}</GridTextTitle>
+          <GridTextNo>No. {poke.id}</GridTextNo>
+        </GridTextDiv>
+        <GridButton id={poke.id}>삭제</GridButton>
+      </GridItem>
+    );
+  });
 };
 
 export default PokemonCard;
