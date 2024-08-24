@@ -44,7 +44,6 @@ const HomeButton = styled.button`
   &:hover {
     background-color: #c0bcbc;
   }
-
   /* position: relative;
   top: 100px; */
 `;

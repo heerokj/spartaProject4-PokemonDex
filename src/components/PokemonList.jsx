@@ -48,8 +48,10 @@ const ListContainer = styled.div`
   margin-top: 20px;
 `;
 
+//=== 포켓몬 카드 ======================================================
 const GridItem = styled.div`
   border: 1px solid #ffffff51;
+  background-color: white;
   border-radius: 5px;
   padding: 20px 30px;
   cursor: pointer;
@@ -57,7 +59,6 @@ const GridItem = styled.div`
     transform: scale(1.05); //0.05배 확대
     transition-duration: 0.3s; //확대시 걸리는 시간 0.3초
   }
-  background-color: white;
   // 아이템들 가로 중앙에 배치 (이미지는 블록 레벨 요소로 바꿔야함)
   text-align: center;
 `;

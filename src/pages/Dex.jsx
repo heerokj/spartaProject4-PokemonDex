@@ -22,23 +22,22 @@ const Dex = () => {
         return false;
       }
     });
-    //console.log("selectedPokemon : ", selectedPokemon);
 
-    //갱신 할 대쉬보드 배열
+    // 갱신 할 대쉬보드 배열
     const newPokemon = [
       ...selectedPokemon,
       {
-        img_url: selectedPokemon.img_url,
-        korean_name: selectedPokemon.korean_name,
-        id: selectedPokemon.id,
+        img_url: selectedPokemon[0].img_url,
+        korean_name: selectedPokemon[0].korean_name,
+        id: selectedPokemon[0].id,
       },
     ];
+
+    console.log("newPokemon : ", newPokemon);
+
     //setState해주기
     setSelectedPokemon(newPokemon);
   };
-
-  //포켓몬 삭제하는 함수
-  const removePokemon = () => {};
 
   return (
     <Main>
