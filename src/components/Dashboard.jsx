@@ -1,10 +1,19 @@
 import styled from "styled-components";
 
 const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
-  // console.log("selectedPokemon", selectedPokemon);
+  //console.log("selectedPokemon", selectedPokemon);
 
   //포켓몬 삭제하는 함수
-  const removePokemon = () => {};
+  const removePokemon = (id) => {
+    const deletePokemon = selectedPokemon.filter((poke) => {
+      if ((poke.id = id)) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    //setSelectedPokemon(deletePokemon);
+  };
 
   return (
     <DashboardContainer>
@@ -20,7 +29,7 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
                 <DashTextTitle>{pokemon.korean_name}</DashTextTitle>
                 <DashTextNo>No. {pokemon.id}</DashTextNo>
               </DashTextDiv>
-              <DashButton id={pokemon.id} onClick={removePokemon}>
+              <DashButton id={pokemon.id} onClick={removePokemon(pokemon.id)}>
                 삭제
               </DashButton>
             </DashItemDiv>
