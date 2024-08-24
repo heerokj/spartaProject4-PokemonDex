@@ -6,7 +6,9 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
   //포켓몬 삭제하는 함수
   const removePokemon = (id) => {
     const deletePokemon = selectedPokemon.filter((poke) => {
-      if ((poke.id = id)) {
+      console.log("poke.id : ", poke.id);
+      console.log("id : ", id);
+      if (poke.id === id) {
         return false;
       } else {
         return true;
