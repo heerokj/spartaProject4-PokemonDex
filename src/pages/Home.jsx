@@ -23,13 +23,12 @@ const Home = () => {
 
 export default Home;
 
-const HomeContainer = styled.div``;
+const HomeContainer = styled.div`
+  text-align: center;
+`;
 
 const HomeImg = styled.img`
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+  display: block;
 `;
 
 const HomeButton = styled.button`
@@ -44,6 +43,6 @@ const HomeButton = styled.button`
   &:hover {
     background-color: #c0bcbc;
   }
-  /* position: relative;
-  top: 100px; */
+  position: relative;
+  bottom: 100px;
 `;

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
-  //console.log("selectedPokemon", selectedPokemon);
-
   //포켓몬 삭제하는 함수
   const removePokemon = (id) => {
     const deletePokemon = selectedPokemon.filter((poke) => {
@@ -14,7 +12,6 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
         return true;
       }
     });
-    console.log("deletePokemon : ", deletePokemon);
     setSelectedPokemon(deletePokemon);
   };
 
@@ -107,6 +104,7 @@ const DashButton = styled.button`
   margin-top: 10px;
   border-radius: 5px;
   border: none;
+  padding: 5px 10px;
   cursor: pointer;
   background-color: red;
   color: white;
