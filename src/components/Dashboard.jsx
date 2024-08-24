@@ -4,8 +4,6 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
   //포켓몬 삭제하는 함수
   const removePokemon = (id) => {
     const deletePokemon = selectedPokemon.filter((poke) => {
-      console.log("poke.id : ", poke.id);
-      console.log("id : ", id);
       if (poke.id === id) {
         return false;
       } else {
@@ -112,24 +110,3 @@ const DashButton = styled.button`
     background-color: #c0bcbc;
   }
 `;
-
-// <DashImgDiv>
-//     <div>
-//       <DashImg src="src\assets\pokeball.png" alt="pokeball" />
-//     </div>
-//     <div>
-//       <DashImg src="src\assets\pokeball.png" alt="pokeball" />
-//     </div>
-//     <div>
-//       <DashImg src="src\assets\pokeball.png" alt="pokeball" />
-//     </div>
-//     <div>
-//       <DashImg src="src\assets\pokeball.png" alt="pokeball" />
-//     </div>
-//     <div>
-//       <DashImg src="src\assets\pokeball.png" alt="pokeball" />
-//     </div>
-//     <div>
-//       <DashImg src="src\assets\pokeball.png" alt="pokeball" />
-//     </div>
-//   </DashImgDiv>

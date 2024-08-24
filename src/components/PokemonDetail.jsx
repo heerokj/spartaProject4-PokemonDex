@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-//???
-//import MOCK_DATA from "../mock";
 import styled from "styled-components";
 
 const PokemonDetail = () => {
@@ -44,12 +42,16 @@ const PokemonDetail = () => {
 export default PokemonDetail;
 
 const DetailContainer = styled.div`
-  border: 1px solid #ffffff51;
-  border-radius: 5px;
-  background-color: #eaeff5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
   text-align: center;
-  padding: 100px 130px;
-  margin-top: 100px;
+
+  /* border: 1px solid #ffffff51;
+  background-color: #eaeff5;
+  border-radius: 5px; */
 `;
 
 const DetailImg = styled.img`
@@ -72,7 +74,7 @@ const DetailBtn = styled.button`
   margin-top: 10px;
   border-radius: 5px;
   padding: 10px 20px;
-  border: none;
   cursor: pointer;
   background-color: white;
+  border-color: gray;
 `;

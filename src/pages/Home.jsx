@@ -5,10 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <HomeContainer>
-      <HomeImg
-        src="https://fontmeme.com/images/Pokemon-Logo.jpg"
-        alt="pokemon"
-      />
+      <img src="https://fontmeme.com/images/Pokemon-Logo.jpg" alt="pokemon" />
       <HomeButton
         onClick={() => {
           navigate("/Dex");
@@ -23,11 +20,11 @@ const Home = () => {
 export default Home;
 
 const HomeContainer = styled.div`
-  text-align: center;
-`;
-
-const HomeImg = styled.img`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 `;
 
 const HomeButton = styled.button`
@@ -43,5 +40,5 @@ const HomeButton = styled.button`
     background-color: #c0bcbc;
   }
   position: relative;
-  bottom: 100px;
+  bottom: 150px;
 `;
