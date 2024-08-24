@@ -1,18 +1,6 @@
 import styled from "styled-components";
 
-const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
-  //포켓몬 삭제하는 함수
-  const removePokemon = (id) => {
-    const deletePokemon = selectedPokemon.filter((poke) => {
-      if (poke.id === id) {
-        return false;
-      } else {
-        return true;
-      }
-    });
-    setSelectedPokemon(deletePokemon);
-  };
-
+const Dashboard = ({ selectedPokemon, onRemovePokemon }) => {
   return (
     <DashboardContainer>
       <DashTitle>나만의 포켓몬</DashTitle>
@@ -29,7 +17,7 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
               </DashTextDiv>
               <DashButton
                 id={pokemon.id}
-                onClick={() => removePokemon(pokemon.id)}
+                onClick={() => onRemovePokemon(pokemon.id)}
               >
                 삭제
               </DashButton>

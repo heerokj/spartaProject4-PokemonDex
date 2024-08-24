@@ -2,51 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const PokemonList = ({ pokemonList, selectedPokemon, setSelectedPokemon }) => {
-  const [detailPoke, setDetailPoke] = useState({ pokemonList });
-  const data = detailPoke.pokemonList;
+const PokemonList = ({ pokemonList, onAddPokemon }) => {
+  const data = pokemonList;
   const navigate = useNavigate();
-
-  //포켓몬을 선택하는 함수
-  const addPokemon = (event) => {
-    event.stopPropagation(); //겹쳐진 밑 부분 이벤트 발생 막기
-    const selectID = event.target.id;
-
-    if (selectedPokemon.length === 6) {
-      alert("포켓몬은 최대 여섯개까지만 선택 할 수 있어요.");
-      return;
-    }
-
-    const targetPokemon = pokemonList.filter((pokemon) => {
-      if (pokemon.id == selectID) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    //흠...
-    // selectedPokemon.find((poke) => {
-    //   if (poke.id == selectID) {
-    //     alert("이미 추가된 포켓몬이에요");
-    //     return;
-    //   }
-    // });
-
-    // 갱신 할 대쉬보드 배열
-    const newPokemon = [
-      ...selectedPokemon,
-      {
-        id: targetPokemon[0].id,
-        img_url: targetPokemon[0].img_url,
-        korean_name: targetPokemon[0].korean_name,
-        id: targetPokemon[0].id,
-      },
-    ];
-
-    //setState해주기
-    setSelectedPokemon(newPokemon);
-  };
 
   return (
     <ListContainer>
@@ -55,7 +13,7 @@ const PokemonList = ({ pokemonList, selectedPokemon, setSelectedPokemon }) => {
           <GridItem
             key={poke.id}
             onClick={() => {
-              navigate("/pokemon-detail?id=" + `${poke.id}`, {
+              navigate(`/pokemon-detail?id=${poke.id}`, {
                 state: { data },
               });
             }}
@@ -65,7 +23,7 @@ const PokemonList = ({ pokemonList, selectedPokemon, setSelectedPokemon }) => {
               <GridTextTitle>{poke.korean_name}</GridTextTitle>
               <GridTextNo>No. {poke.id}</GridTextNo>
             </GridTextDiv>
-            <GridButton id={poke.id} onClick={addPokemon}>
+            <GridButton id={poke.id} onClick={onAddPokemon}>
               추가
             </GridButton>
           </GridItem>
