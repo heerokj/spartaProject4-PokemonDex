@@ -12,7 +12,8 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
         return true;
       }
     });
-    //setSelectedPokemon(deletePokemon);
+    console.log("deletePokemon : ", deletePokemon);
+    setSelectedPokemon(deletePokemon);
   };
 
   return (
@@ -29,7 +30,10 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
                 <DashTextTitle>{pokemon.korean_name}</DashTextTitle>
                 <DashTextNo>No. {pokemon.id}</DashTextNo>
               </DashTextDiv>
-              <DashButton id={pokemon.id} onClick={removePokemon(pokemon.id)}>
+              <DashButton
+                id={pokemon.id}
+                onClick={() => removePokemon(pokemon.id)}
+              >
                 삭제
               </DashButton>
             </DashItemDiv>

@@ -7,13 +7,18 @@ const PokemonList = ({ MOCK_DATA, selectedPokemon, setSelectedPokemon }) => {
   const data = detailPoke.MOCK_DATA;
   const navigate = useNavigate();
 
-  // console.log("Dex페이지 포켓몬 선택 전 selectedPokemon : ", selectedPokemon);
+  //console.log("Dex페이지 포켓몬 선택 전 selectedPokemon : ", selectedPokemon);
 
   //포켓몬을 선택하는 함수
   const addPokemon = (event) => {
     event.stopPropagation(); //겹쳐진 밑 부분 이벤트 발생 막기
     const selectID = event.target.id;
-    // console.log("선택시 해당 id : ", event.target.id);
+    // console.log("선택시 해당 id : ", event.target.id);'
+
+    if (selectedPokemon.length === 6) {
+      alert("포켓몬은 최대 여섯개까지만 선택 할 수 있어요.");
+      return;
+    }
 
     const targetPokemon = MOCK_DATA.filter((pokemon) => {
       if (pokemon.id == selectID) {
@@ -23,7 +28,15 @@ const PokemonList = ({ MOCK_DATA, selectedPokemon, setSelectedPokemon }) => {
       }
     });
 
-    console.log("targetPokemon[0] : ", targetPokemon[0]);
+    // const alreadyPokemon = selectedPokemon.find((pokemon) => {
+    //   return pokemon.id == targetPokemon[0].id;
+    // });
+    // if (alreadyPokemon) {
+    //   alert("이미 추가한 포켓몬이에요.");
+    //   return;
+    // }
+
+    //console.log("targetPokemon[0] : ", targetPokemon[0]);
     // 갱신 할 대쉬보드 배열
     const newPokemon = [
       ...selectedPokemon,
@@ -35,7 +48,7 @@ const PokemonList = ({ MOCK_DATA, selectedPokemon, setSelectedPokemon }) => {
       },
     ];
 
-    console.log("newPokemon : ", newPokemon);
+    //console.log("newPokemon : ", newPokemon);
 
     //setState해주기
     setSelectedPokemon(newPokemon);
