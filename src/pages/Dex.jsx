@@ -16,9 +16,9 @@ const Dex = () => {
         selectedPokemon={selectedPokemon}
         setSelectedPokemon={setSelectedPokemon}
       />
-      {/* 보낼이름(여기에도 데이터가 들어가야?) = {진짜데이터} */}
+      {/* 보낼이름( 받는곳에서 써줘야할 이름 ) = {진짜데이터} */}
       <PokemonList
-        MOCK_DATA={MOCK_DATA}
+        pokemonList={MOCK_DATA}
         selectedPokemon={selectedPokemon}
         setSelectedPokemon={setSelectedPokemon}
       />

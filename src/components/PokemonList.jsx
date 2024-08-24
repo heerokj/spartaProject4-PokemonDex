@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const PokemonList = ({ MOCK_DATA, selectedPokemon, setSelectedPokemon }) => {
-  const [detailPoke, setDetailPoke] = useState({ MOCK_DATA });
-  const data = detailPoke.MOCK_DATA;
+const PokemonList = ({ pokemonList, selectedPokemon, setSelectedPokemon }) => {
+  const [detailPoke, setDetailPoke] = useState({ pokemonList });
+  const data = detailPoke.pokemonList;
   const navigate = useNavigate();
 
   //포켓몬을 선택하는 함수
@@ -17,7 +17,7 @@ const PokemonList = ({ MOCK_DATA, selectedPokemon, setSelectedPokemon }) => {
       return;
     }
 
-    const targetPokemon = MOCK_DATA.filter((pokemon) => {
+    const targetPokemon = pokemonList.filter((pokemon) => {
       if (pokemon.id == selectID) {
         return true;
       } else {
@@ -50,7 +50,7 @@ const PokemonList = ({ MOCK_DATA, selectedPokemon, setSelectedPokemon }) => {
 
   return (
     <ListContainer>
-      {MOCK_DATA.map((poke) => {
+      {pokemonList.map((poke) => {
         return (
           <GridItem
             key={poke.id}
