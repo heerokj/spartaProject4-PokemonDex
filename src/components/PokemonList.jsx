@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { PokemonContext } from "../pages/Dex";
 
-const PokemonList = ({ pokemonList, selectedPokemon, setSelectedPokemon }) => {
+const PokemonList = () => {
+  const { pokemonList, selectedPokemon, setSelectedPokemon } =
+    useContext(PokemonContext);
   const [detailPoke, setDetailPoke] = useState({ pokemonList });
   const data = detailPoke.pokemonList;
   const navigate = useNavigate();
@@ -25,13 +28,15 @@ const PokemonList = ({ pokemonList, selectedPokemon, setSelectedPokemon }) => {
       }
     });
 
-    //흠...
-    // selectedPokemon.find((poke) => {
-    //   if (poke.id == selectID) {
-    //     alert("이미 추가된 포켓몬이에요");
-    //     return;
-    //   }
+    // const checkPokemon = selectedPokemon.find((pokemon) => {
+    //   return targetPokemon.id === pokemon.id;
     // });
+    // console.log("checkPokemon", checkPokemon);
+
+    // if (checkPokemon) {
+    //   alert(`${targetPokemon.korean_name} 은(는) 이미 추가된 포켓몬이에요.`);
+    //   return;
+    // }
 
     // 갱신 할 대쉬보드 배열
     const newPokemon = [

@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 const PokemonDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const id = searchParams.get("id");
-
   const location = useLocation();
+
   const pokeData = location.state.data;
+  const pokemonId = searchParams.get("id");
 
   const checkedPokemon = pokeData.filter((poke) => {
-    if (poke.id == id) {
+    if (poke.id == pokemonId) {
       return true;
     } else {
       return false;
@@ -48,10 +48,6 @@ const DetailContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   text-align: center;
-
-  /* border: 1px solid #ffffff51;
-  background-color: #eaeff5;
-  border-radius: 5px; */
 `;
 
 const DetailImg = styled.img`
