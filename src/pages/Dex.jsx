@@ -22,6 +22,23 @@ const Dex = () => {
       return pokemon.id == selectID;
     });
 
+    const result = selectedPokemon.find((poke) => {
+      return poke.id == targetPokemon[0].id;
+    });
+
+    if (result) {
+      alert(`${result.korean_name}는(은) 이미 추가된 포켓몬이에요.`);
+      return;
+    }
+    // if (typeof result === "object") {
+    //   alert("이미 추가된 포켓몬이에요.2");
+    //   return;
+    // }
+    // if (result !== undefined) {
+    //   alert("이미 추가된 포켓몬이에요.");
+    //   return;
+    // }
+
     // 갱신 할 대쉬보드 배열
     const newPokemon = [
       ...selectedPokemon,
