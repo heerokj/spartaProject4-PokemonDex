@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PokemonList from "../components/PokemonList";
 import Dashboard from "../components/Dashboard";
 import styled from "styled-components";
@@ -30,14 +30,6 @@ const Dex = () => {
       alert(`${result.korean_name}는(은) 이미 추가된 포켓몬이에요.`);
       return;
     }
-    // if (typeof result === "object") {
-    //   alert("이미 추가된 포켓몬이에요.2");
-    //   return;
-    // }
-    // if (result !== undefined) {
-    //   alert("이미 추가된 포켓몬이에요.");
-    //   return;
-    // }
 
     // 갱신 할 대쉬보드 배열
     const newPokemon = [
@@ -46,7 +38,6 @@ const Dex = () => {
         id: targetPokemon[0].id,
         img_url: targetPokemon[0].img_url,
         korean_name: targetPokemon[0].korean_name,
-        id: targetPokemon[0].id,
       },
     ];
     setSelectedPokemon(newPokemon);
