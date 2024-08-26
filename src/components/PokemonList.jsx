@@ -1,61 +1,20 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { PokemonContext } from "../pages/Dex";
+import { useNavigate } from "react-router-dom";
+import { PokemonContext } from "../context/PokemonContext";
+import { useContext, useState } from "react";
 
-const PokemonList = () => {
-  const { pokemonList, selectedPokemon, setSelectedPokemon } =
-    useContext(PokemonContext);
-  const [detailPoke, setDetailPoke] = useState({ pokemonList });
-  const data = detailPoke.pokemonList;
+const PokemonList = ({ MOCK_DATA }) => {
+  const { addPokemon } = useContext(PokemonContext);
+  const [detailPoke, setDetailPoke] = useState({ MOCK_DATA });
   const navigate = useNavigate();
 
-  //포켓몬을 선택하는 함수
-  const addPokemon = (event) => {
-    event.stopPropagation(); //겹쳐진 밑 부분 이벤트 발생 막기
-    const selectID = event.target.id;
+  const data = detailPoke.MOCK_DATA;
 
-    if (selectedPokemon.length === 6) {
-      alert("포켓몬은 최대 여섯개까지만 선택 할 수 있어요.");
-      return;
-    }
-
-    const targetPokemon = pokemonList.filter((pokemon) => {
-      if (pokemon.id == selectID) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    // const checkPokemon = selectedPokemon.find((pokemon) => {
-    //   return targetPokemon.id === pokemon.id;
-    // });
-    // console.log("checkPokemon", checkPokemon);
-
-    // if (checkPokemon) {
-    //   alert(`${targetPokemon.korean_name} 은(는) 이미 추가된 포켓몬이에요.`);
-    //   return;
-    // }
-
-    // 갱신 할 대쉬보드 배열
-    const newPokemon = [
-      ...selectedPokemon,
-      {
-        id: targetPokemon[0].id,
-        img_url: targetPokemon[0].img_url,
-        korean_name: targetPokemon[0].korean_name,
-        id: targetPokemon[0].id,
-      },
-    ];
-
-    //setState해주기
-    setSelectedPokemon(newPokemon);
-  };
+  console.log("MOCK_DATA", MOCK_DATA);
 
   return (
     <ListContainer>
-      {pokemonList.map((poke) => {
+      {MOCK_DATA.map((poke) => {
         return (
           <GridItem
             key={poke.id}

@@ -1,21 +1,9 @@
-import { useContext } from "react";
 import styled from "styled-components";
-import { PokemonContext } from "../pages/Dex";
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 
 const Dashboard = () => {
-  const { selectedPokemon, setSelectedPokemon } = useContext(PokemonContext);
-
-  //포켓몬 삭제하는 함수
-  const removePokemon = (id) => {
-    const deletePokemon = selectedPokemon.filter((poke) => {
-      if (poke.id === id) {
-        return false;
-      } else {
-        return true;
-      }
-    });
-    setSelectedPokemon(deletePokemon);
-  };
+  const { selectedPokemon, removePokemon } = useContext(PokemonContext);
 
   return (
     <DashboardContainer>
