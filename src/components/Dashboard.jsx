@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { useContext } from "react";
+import { PokemonContext } from "../pages/Dex";
 
-const Dashboard = ({ selectedPokemon, removePokemon }) => {
+const Dashboard = () => {
+  const { selectedPokemon, removePokemon } = useContext(PokemonContext);
   return (
     <DashboardContainer>
       <DashTitle>나만의 포켓몬</DashTitle>

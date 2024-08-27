@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { useContext } from "react";
+import { PokemonContext } from "../pages/Dex";
 
-const PokemonList = ({ pokemonList, addPokemon }) => {
+const PokemonList = () => {
+  const { pokemonList, addPokemon } = useContext(PokemonContext);
+
   return (
     <ListContainer>
       {pokemonList.map((pokemon) => (
