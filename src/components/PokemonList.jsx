@@ -10,7 +10,7 @@ const PokemonList = ({ MOCK_DATA }) => {
 
   const data = detailPoke.MOCK_DATA;
 
-  console.log("MOCK_DATA", MOCK_DATA);
+  // console.log("MOCK_DATA", MOCK_DATA);
 
   return (
     <ListContainer>

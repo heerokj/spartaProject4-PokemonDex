@@ -4,7 +4,6 @@ import { PokemonContext } from "../context/PokemonContext";
 
 const Dashboard = () => {
   const { selectedPokemon, removePokemon } = useContext(PokemonContext);
-
   return (
     <DashboardContainer>
       <DashTitle>나만의 포켓몬</DashTitle>

@@ -1,13 +1,16 @@
-import React from "react";
 import Router from "./shared/Router";
 import "./App.css";
-import styled from "styled-components";
+
+import store from "./redux/config/configStore";
+import { Provider } from "react-redux";
 
 const App = () => {
   return (
-    <div className="app-container">
-      <Router />
-    </div>
+    <Provider store={store}>
+      <div className="app-container">
+        <Router />
+      </div>
+    </Provider>
   );
 };
 

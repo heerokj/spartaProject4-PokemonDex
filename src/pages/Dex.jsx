@@ -4,7 +4,12 @@ import { PokemonProvider } from "../context/PokemonContext";
 import MOCK_DATA from "../mock";
 import styled from "styled-components";
 
+import { useSelector } from "react-redux"; // import 해주세요.
+
 const Dex = () => {
+  const pokeSelectStore = useSelector((state) => state);
+  console.log("pokeSelectStore", pokeSelectStore);
+
   return (
     <PokemonProvider>
       <Main>
