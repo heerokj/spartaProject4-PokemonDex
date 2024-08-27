@@ -1,13 +1,11 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { addPokemon, removePokemon } from "../features/pokemonSlice";
 
-export default function PokemonCard({
-  pokemon,
-  isSelected,
-  addPokemon,
-  removePokemon,
-}) {
+export default function PokemonCard({ pokemon, isSelected }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleCardClick = () => {
     // id값 어케 넘기지 => 쿼리스트링으로
@@ -26,7 +24,7 @@ export default function PokemonCard({
         <PokemonButton
           onClick={(e) => {
             e.stopPropagation();
-            removePokemon(pokemon);
+            dispatch(removePokemon(pokemon));
           }}
         >
           삭제
@@ -35,7 +33,7 @@ export default function PokemonCard({
         <PokemonButton
           onClick={(e) => {
             e.stopPropagation();
-            addPokemon(pokemon);
+            dispatch(addPokemon(pokemon));
           }}
         >
           추가
