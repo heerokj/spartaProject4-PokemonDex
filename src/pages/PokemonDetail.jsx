@@ -5,7 +5,9 @@ import MOCK_DATA from "../mock";
 const PokemonDetail = () => {
   const location = useLocation();
   const pokemonId = location.search.substr(4);
-  const selectedPokemon = MOCK_DATA.find((poke) => poke.id == pokemonId);
+  const selectedPokemon = MOCK_DATA.find(
+    (poke) => poke.id === parseInt(pokemonId)
+  );
 
   const navigate = useNavigate();
   return (
