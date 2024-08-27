@@ -38,8 +38,4 @@ const Dex = () => {
 
 export default Dex;
 
-const Main = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  padding: 20px; */
-`;
+const Main = styled.div``;
