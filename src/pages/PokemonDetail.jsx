@@ -1,31 +1,22 @@
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import MOCK_DATA from "../mock";
 
 const PokemonDetail = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-
-  const pokeData = location.state.data;
-  const pokemonId = searchParams.get("id");
-
-  const checkedPokemon = pokeData.filter((poke) => {
-    if (poke.id == pokemonId) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  const pokemonId = location.search.substr(4);
+  const selectedPokemon = MOCK_DATA.find((poke) => poke.id == pokemonId);
 
   const navigate = useNavigate();
   return (
     <DetailContainer>
       <div>
-        <DetailImg src={checkedPokemon[0].img_url} alt="" />
+        <DetailImg src={selectedPokemon.img_url} alt="" />
       </div>
       <div>
-        <DetailTitle>{checkedPokemon[0].korean_name}</DetailTitle>
-        <DetailP>타입 : {checkedPokemon[0].types}</DetailP>
-        <DetailP>{checkedPokemon[0].description}</DetailP>
+        <DetailTitle>{selectedPokemon.korean_name}</DetailTitle>
+        <DetailP>타입 : {selectedPokemon.types}</DetailP>
+        <DetailP>{selectedPokemon.description}</DetailP>
       </div>
       <DetailBtn
         onClick={() => {

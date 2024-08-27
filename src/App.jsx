@@ -1,11 +1,20 @@
-import Router from "./shared/Router";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Dex from "./pages/Dex";
+import PokemonDetail from "./pages/PokemonDetail";
 
 const App = () => {
   return (
-    <div className="app-container">
-      <Router />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dex" element={<Dex />} />
+          <Route path="/pokemon-detail" element={<PokemonDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 

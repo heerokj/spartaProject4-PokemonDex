@@ -8,7 +8,7 @@ const Home = () => {
       <img src="https://fontmeme.com/images/Pokemon-Logo.jpg" alt="pokemon" />
       <HomeButton
         onClick={() => {
-          navigate("/Dex");
+          navigate("/dex");
         }}
       >
         포켓몬 도감 시작하기
